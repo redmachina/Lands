@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="lands.Views.LoginPage"
              BindingContext="{Binding Main,Source={StaticResource Locator }}"
-             Title="Login">
+             Title="Lands">
     <ContentPage.Content>
 
         <ScrollView>
@@ -14,13 +14,7 @@
         
 
             <StackLayout Padding="10,20,10,5">
-            <Label
-            FontAttributes="Bold"
-                FontSize="Large"
-                HorizontalOptions="Center" 
-            Text="Lands">
-         
-            </Label>
+            
             <Image
                 Source="mapa"
                 WidthRequest="150"
