@@ -9,7 +9,8 @@
              Title="Lands">
     <ContentPage.Content>
 
-        <ScrollView>
+        <ScrollView
+            BindingContext="{Binding Login}">
             
         
 
@@ -35,6 +36,7 @@
                 IsPassword="True"
                 HeightRequest="30"
                 FontSize="9"    
+                Text="{Binding Email, Mode=TwoWay}"    
                 Placeholder="Enter password...">
                 </Entry>
 
@@ -47,17 +49,23 @@
                 Keyboard="Email"
                 HeightRequest="30"  
                 FontSize="9"    
+                Text="{Binding Password, Mode=TwoWay}"    
                 Placeholder="Enter your email...">
                 </Entry>
+                    <d:ActivityIndicator
+                        IsRunning="{Binding IsRunning, Mode=TwoWay}"
+                        VerticalOptions="CenterAndExpand">
+                        
+                    </d:ActivityIndicator>
 
-
-                <Label
+                        <Label
                     HorizontalOptions="StartAndExpand"
                     FontSize="9"
                     Text="Remeber me in this device"
                     VerticalOptions="Center">
                 </Label>
                 <Switch
+                    IsToggled="{Binding IsRemmember, Mode=TwoWay}"
                     HorizontalOptions="End"
                     HeightRequest="30"></Switch>
 
@@ -73,7 +81,7 @@
                 Margin="10.0">
                 <Button
                 BackgroundColor="Navy"
-                
+                Command="{Binding LoginCommand}"
                 BorderRadius ="23"
                 HeightRequest="30"
                 FontSize="9"    
@@ -95,7 +103,8 @@
             </StackLayout>
             <StackLayout
                 HorizontalOptions="Center"
-                Orientation="Horizontal">
+                Orientation="Horizontal"
+                VerticalOptions="EndAndExpand">
                 <Image
                     Source="facebook_logo"
                     WidthRequest="50">
