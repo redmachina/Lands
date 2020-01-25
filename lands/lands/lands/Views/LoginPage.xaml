@@ -9,29 +9,24 @@
              Title="Lands">
     <ContentPage.Content>
 
-        <ScrollView
-            BindingContext="{Binding Login}">
+        <ScrollView BindingContext="{Binding Login}">
             
-        
-
             <StackLayout Padding="10,20,10,5">
-            
-            <Image
+
+                <Image
                 Source="mapa"
                 WidthRequest="150"
                 >
-                
-            </Image>
+                </Image>
             
             
-            <StackLayout
-                Orientation="Vertical">
+            <StackLayout Orientation="Vertical">
 
                 <Label
                     Text="Password"
-                    
                     VerticalOptions="Center">
                 </Label>
+                
                 <Entry
                 IsPassword="True"
                 HeightRequest="30"
@@ -41,10 +36,10 @@
                 </Entry>
 
                 <Label
-                    Text="E-mail"
-                    
+                    Text="E-mail" 
                     VerticalOptions="Center">
                 </Label>
+                
                 <Entry
                 Keyboard="Email"
                 HeightRequest="30"  
@@ -52,10 +47,10 @@
                 Text="{Binding Password, Mode=TwoWay}"    
                 Placeholder="Enter your email...">
                 </Entry>
+                
                     <d:ActivityIndicator
                         IsRunning="{Binding IsRunning, Mode=TwoWay}"
                         VerticalOptions="CenterAndExpand">
-                        
                     </d:ActivityIndicator>
 
                         <Label
@@ -74,7 +69,6 @@
                     HorizontalOptions="Center"
                     Text="Forgot your password?"
                     TextColor="Blue">
-                    
                 </Label>
 
             <StackLayout
@@ -82,6 +76,7 @@
                 <Button
                 BackgroundColor="Navy"
                 Command="{Binding LoginCommand}"
+                IsEnabled="{Binding IsEnabled,Mode =TwoWay}"
                 BorderRadius ="23"
                 HeightRequest="30"
                 FontSize="9"    
@@ -94,6 +89,7 @@
                 BackgroundColor="Purple"
                 FontSize="9"
                 BorderRadius ="23"
+                IsEnabled="{Binding IsEnabled,Mode =TwoWay}"
                 HeightRequest="30"
                 Text="Register"
                 TextColor="White"
