@@ -5,8 +5,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="lands.Views.LoginPage"
+             
              BindingContext="{Binding Main,Source={StaticResource Locator }}"
-             Title="Lands">
+             
+             Title="Login">
+    
     <ContentPage.Content>
 
         <ScrollView BindingContext="{Binding Login}">

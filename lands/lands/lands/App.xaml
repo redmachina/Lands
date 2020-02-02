@@ -6,7 +6,9 @@
              xmlns:infra="clr-namespace:lands.Infraestructure"
              mc:Ignorable="d"
              x:Class="lands.App">
+
     <Application.Resources>
+        
         <ResourceDictionary>
             <infra:InstanceLocator x:Key="Locator"/>
         </ResourceDictionary>

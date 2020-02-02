@@ -9,6 +9,8 @@ namespace lands.ViewModels
     using System.ComponentModel;
     using System.Windows.Input;
     using Xamarin.Forms;
+    using Views;
+
 
     class LoginViewModel : BaseViewModel
     {
@@ -31,27 +33,8 @@ namespace lands.ViewModels
         }
 
         public String Password {
-
             get { return password; }
             set { SetValue(ref password, value); }
-            
-            
-            /*get 
-            {
-                return this.password;
-            } 
-
-            set
-            {
-                if(this.password != value)
-                {
-                    this.password = value;
-
-                    PropertyChanged?.Invoke(
-                        this,
-                        new PropertyChangedEventArgs(nameof(this.password)));
-                }
-            }*/
         }
 
         public bool IsRunning
@@ -152,12 +135,12 @@ namespace lands.ViewModels
             this.IsRunning = true;
             this.IsEnabled = false;
 
-            await Application.Current.MainPage.DisplayAlert(
-                   "ok",
-                   "Fuck yea!!!",
-                   "Accept");
+            this.Email = string.Empty;
+            this.Password = string.Empty;
 
 
+            MainViewModel.GetInstance().Lands = new LandsViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new Lands1Page());
 
 
         }
